@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
+import Header from "./components/Header";
 
 const ralewaySans = Raleway({
   variable: "--font-raleway-sans",
@@ -13,20 +15,18 @@ const ralewayMono = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Onda Dura Europa",
-  description: "Este é o site principal do projeto Onda Dura Europa.",
+  title: "Hope Europa",
+  description: "Este é o site principal do projeto Hope Europa.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default function RootLayout({children}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${ralewaySans.variable} ${ralewayMono.variable} antialiased`}
-      >
+      <body className={`${ralewaySans.variable} ${ralewayMono.variable} antialiased`}>
+        <Head><title>Onda Dura</title></Head>
+        <Header />
         {children}
       </body>
     </html>

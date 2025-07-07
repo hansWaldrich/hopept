@@ -1,17 +1,15 @@
-import Head from 'next/head';
-import Header from './components/Header';
-import CentralNews from './components/central-news';
+import { topics } from './data/topics';
+import { TopicCard } from './components/TopicCard';
 
 export default function Home() {
+
   return (
     <div>
-      <Head><title>Onda Dura</title></Head>
-      <Header />
-      <main className="p-8">
-        <h1 className="text-4xl font-bold">Bem-vindo à Onda Dura</h1>
-        <p className="mt-4 text-lg">Uma igreja bíblica, acolhedora e extraordinária</p>
-        <div className="p-8">
-          <CentralNews />
+      <main className="p-8">        
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-2 text-center">
+          {topics.map((topic) => (
+            <TopicCard key={topic.slug} slug={topic.slug} title={topic.title} />
+          ))}
         </div>
       </main>      
     </div>

@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --secondary: #000000;
 }
 
 @theme inline {
@@ -14,8 +15,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #6e11b0;
+    --foreground: #ffffff;
   }
 }
 
@@ -23,4 +24,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Raleway", sans-serif;
+}
+
+.institution-card, .topic-card {
+  @apply bg-gradient-to-r from-yellow-400 via-black via-5% to-black text-white rounded-lg p-4 shadow-md
 }
